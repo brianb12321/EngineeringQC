@@ -30,9 +30,9 @@ if __name__ == "__main__":
         totals["P"] = calc.calculate_segments_plow(segments[SegmentType.PLOW], first_segment, last_segment)
         totals["B"] = calc.calculate_segments_bore(segments[SegmentType.BORE], first_segment, last_segment)
         print(f"BFO = {totals['P']}")
-        print(f"BFOI = {totals['B'][2]}")
-        print(f"BFOV = {totals['B'][1]}")
-        print(f"BM61D = {totals['B'][0]}")
+        print(f"BFOI = {totals['B'].bfoi}")
+        print(f"BFOV = {totals['B'].bfov}")
+        print(f"BM61D = {totals['B'].bm61d}")
 
         print("Press ENTER when ready.")
         input()

@@ -1,6 +1,7 @@
 from segment import Segment, SegmentType
+from result_structures import BoreResult
 
-def calculate_segments_plow(segments: list[Segment], first_segment: Segment, last_segment: Segment):
+def calculate_segments_plow(segments: list[Segment], first_segment: Segment, last_segment: Segment) -> int:
     """
     Calculates BFO value given all plow segments.
     """
@@ -20,7 +21,7 @@ def calculate_segments_plow(segments: list[Segment], first_segment: Segment, las
 
     return bfo
 
-def calculate_segments_bore(segments: list[Segment], first_segment: Segment, last_segment: Segment):
+def calculate_segments_bore(segments: list[Segment], first_segment: Segment, last_segment: Segment) -> BoreResult:
     bore_type = SegmentType.BORE
     segment_sum = 0
     bm61d = 0
@@ -49,4 +50,4 @@ def calculate_segments_bore(segments: list[Segment], first_segment: Segment, las
         bfov = segment_sum
         bfoi = segment_sum
 
-    return (bm61d, bfov, bfoi)
+    return BoreResult(bm61d=bm61d, bfoi=bfoi, bfov=bfov)
